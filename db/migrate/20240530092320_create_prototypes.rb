@@ -1,9 +1,10 @@
 class CreatePrototypes < ActiveRecord::Migration[7.0]
   def change
-    create_table :comments do |t|
-      t.text :content, null: false
-      t.references :user, null: false, foreign_key: true
-      t.references :prototype, null: false, foreign_key: true
+    create_table :prototypes do |t|
+      t.string :title, null: false
+      t.text :catch_copy, null: false
+      t.text :concept, null: false
+      t.references :user, null: false, foreign_key: false
       t.timestamps
     end
   end
